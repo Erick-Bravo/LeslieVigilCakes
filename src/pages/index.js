@@ -6,6 +6,8 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import * as styles from "../components/index.module.css"
 
+// console.log(process.env.SPACEID)
+
 const links = [
   {
     text: "Tutorial",

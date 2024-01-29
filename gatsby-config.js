@@ -7,15 +7,24 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+require(`dotenv`).config();
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Leslie Vigil Cakes - Cake Decoration Instructor`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    author: `@leslievigilcakes`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
     `gatsby-plugin-image`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.SPACEID,
+        accessToken: process.env.ACCESSTOKEN
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
